@@ -1,0 +1,107 @@
+2025-04-22 11:28:27 [INFO]: Request: POST /api/users/register - IP: ::1
+2025-04-22 11:28:27 [INFO]: New user created: 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:28:27 [INFO]: Response: POST /api/users/register - Status: 201 - Duration: 232ms
+2025-04-22 11:29:38 [INFO]: Request: POST /api/users/login - IP: ::ffff:127.0.0.1
+2025-04-22 11:29:38 [INFO]: User authenticated: 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:29:38 [INFO]: Response: POST /api/users/login - Status: 200 - Duration: 198ms
+2025-04-22 11:30:00 [INFO]: Request: GET /api/users/profile - IP: ::ffff:127.0.0.1
+2025-04-22 11:30:00 [ERROR]: 401 - Authorization header missing or malformed - /api/users/profile - GET - ::ffff:127.0.0.1
+2025-04-22 11:30:00 [WARN]: Response: GET /api/users/profile - Status: 401 - Duration: 9ms
+2025-04-22 11:30:37 [INFO]: Request: GET /api/users/profile - IP: ::ffff:127.0.0.1
+2025-04-22 11:30:37 [INFO]: Response: GET /api/users/profile - Status: 200 - Duration: 55ms
+2025-04-22 11:32:06 [INFO]: Request: POST /api/addresses - IP: ::1
+2025-04-22 11:32:06 [INFO]: Response: POST /api/addresses - Status: 201 - Duration: 64ms
+2025-04-22 11:32:33 [INFO]: Request: GET /api/addresses - IP: ::ffff:127.0.0.1
+2025-04-22 11:32:33 [INFO]: Response: GET /api/addresses - Status: 200 - Duration: 47ms
+2025-04-22 11:32:57 [INFO]: Request: POST /api/addresses - IP: ::1
+2025-04-22 11:32:57 [INFO]: Response: POST /api/addresses - Status: 201 - Duration: 54ms
+2025-04-22 11:33:13 [INFO]: Request: GET /api/addresses - IP: ::ffff:127.0.0.1
+2025-04-22 11:33:13 [INFO]: Response: GET /api/addresses - Status: 200 - Duration: 49ms
+2025-04-22 11:33:27 [INFO]: Request: GET /api/addresses - IP: ::1
+2025-04-22 11:33:27 [INFO]: Response: GET /api/addresses - Status: 200 - Duration: 56ms
+2025-04-22 11:33:36 [INFO]: Request: POST /api/addresses - IP: ::1
+2025-04-22 11:33:36 [INFO]: Response: POST /api/addresses - Status: 201 - Duration: 56ms
+2025-04-22 11:33:44 [INFO]: Request: GET /api/addresses - IP: ::1
+2025-04-22 11:33:44 [INFO]: Response: GET /api/addresses - Status: 200 - Duration: 49ms
+2025-04-22 11:34:01 [INFO]: Request: DELETE /api/addresses/6807e0d93c2ab41701b55bfd - IP: ::1
+2025-04-22 11:34:02 [INFO]: Response: DELETE /api/addresses/6807e0d93c2ab41701b55bfd - Status: 200 - Duration: 104ms
+2025-04-22 11:35:29 [INFO]: Request: POST /api/doctors - IP: ::ffff:127.0.0.1
+2025-04-22 11:35:29 [INFO]: Response: POST /api/doctors - Status: 201 - Duration: 61ms
+2025-04-22 11:37:15 [INFO]: Request: POST /api/doctors - IP: ::ffff:127.0.0.1
+2025-04-22 11:37:15 [INFO]: Response: POST /api/doctors - Status: 201 - Duration: 73ms
+2025-04-22 11:37:21 [INFO]: Request: GET /api/doctors - IP: ::ffff:127.0.0.1
+2025-04-22 11:37:22 [INFO]: Response: GET /api/doctors - Status: 200 - Duration: 117ms
+2025-04-22 11:38:30 [INFO]: Request: POST /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:38:30 [INFO]: New appointment created: 6807e2263c2ab41701b55c0d
+2025-04-22 11:38:30 [INFO]: Response: POST /api/appointments - Status: 201 - Duration: 118ms
+2025-04-22 11:38:37 [INFO]: Request: GET /api/appointments/ - IP: ::ffff:127.0.0.1
+2025-04-22 11:38:37 [INFO]: Retrieved 1 appointments for user 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:38:37 [INFO]: Response: GET /api/appointments/ - Status: 200 - Duration: 105ms
+2025-04-22 11:39:06 [INFO]: Request: POST /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:39:06 [ERROR]: Appointment creation failed: This time slot is already booked
+2025-04-22 11:39:06 [ERROR]: 400 - This time slot is already booked - /api/appointments - POST - ::ffff:127.0.0.1
+2025-04-22 11:39:06 [WARN]: Response: POST /api/appointments - Status: 400 - Duration: 64ms
+2025-04-22 11:39:17 [INFO]: Request: POST /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:39:17 [INFO]: New appointment created: 6807e2553c2ab41701b55c13
+2025-04-22 11:39:17 [INFO]: Response: POST /api/appointments - Status: 201 - Duration: 93ms
+2025-04-22 11:39:29 [INFO]: Request: GET /api/appointments/ - IP: ::ffff:127.0.0.1
+2025-04-22 11:39:30 [INFO]: Retrieved 2 appointments for user 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:39:30 [INFO]: Response: GET /api/appointments/ - Status: 200 - Duration: 103ms
+2025-04-22 11:39:39 [INFO]: Request: PUT /api/appointments/6807e2263c2ab41701b55c0d/cancel - IP: ::ffff:127.0.0.1
+2025-04-22 11:39:39 [INFO]: Appointment 6807e2263c2ab41701b55c0d cancelled by user 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:39:39 [INFO]: Response: PUT /api/appointments/6807e2263c2ab41701b55c0d/cancel - Status: 200 - Duration: 295ms
+2025-04-22 11:40:11 [INFO]: Request: GET /api/appointments/ - IP: ::ffff:127.0.0.1
+2025-04-22 11:40:12 [INFO]: Retrieved 2 appointments for user 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:40:12 [INFO]: Response: GET /api/appointments/ - Status: 200 - Duration: 97ms
+2025-04-22 11:40:40 [INFO]: Request: POST /api/ratings - IP: ::ffff:127.0.0.1
+2025-04-22 11:40:40 [ERROR]: Rating creation failed: Cannot rate: appointment not found or not completed
+2025-04-22 11:40:40 [ERROR]: 400 - Cannot rate: appointment not found or not completed - /api/ratings - POST - ::ffff:127.0.0.1
+2025-04-22 11:40:40 [WARN]: Response: POST /api/ratings - Status: 400 - Duration: 53ms
+2025-04-22 11:40:57 [INFO]: Request: GET /api/appointments/ - IP: ::ffff:127.0.0.1
+2025-04-22 11:40:57 [INFO]: Retrieved 2 appointments for user 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:40:57 [INFO]: Response: GET /api/appointments/ - Status: 200 - Duration: 94ms
+2025-04-22 11:41:14 [INFO]: Request: POST /api/ratings - IP: ::ffff:127.0.0.1
+2025-04-22 11:41:14 [INFO]: Updated rating for doctor 6807e1713c2ab41701b55c06: 4.9
+2025-04-22 11:41:14 [INFO]: New rating created for doctor 6807e1713c2ab41701b55c06 by user 6807dfcb3c2ab41701b55bf6
+2025-04-22 11:41:14 [INFO]: Response: POST /api/ratings - Status: 201 - Duration: 247ms
+2025-04-22 11:41:22 [INFO]: Request: GET /api/ratings/user - IP: ::ffff:127.0.0.1
+2025-04-22 11:41:23 [INFO]: Response: GET /api/ratings/user - Status: 200 - Duration: 88ms
+2025-04-22 11:48:05 [INFO]: Request: GET /api/ratings/doctor/68034b43f174bd8852f35b8b - IP: ::ffff:127.0.0.1
+2025-04-22 11:48:05 [INFO]: Response: GET /api/ratings/doctor/68034b43f174bd8852f35b8b - Status: 200 - Duration: 47ms
+2025-04-22 11:48:29 [INFO]: Request: GET /api/ratings/doctor/6807e1713c2ab41701b55c06 - IP: ::ffff:127.0.0.1
+2025-04-22 11:48:30 [INFO]: Response: GET /api/ratings/doctor/6807e1713c2ab41701b55c06 - Status: 200 - Duration: 89ms
+2025-04-22 11:57:37 [INFO]: Request: GET /api/doctors - IP: ::ffff:127.0.0.1
+2025-04-22 11:57:37 [INFO]: Response: GET /api/doctors - Status: 200 - Duration: 115ms
+2025-04-22 11:58:39 [INFO]: Request: POST /api/users/register - IP: ::ffff:127.0.0.1
+2025-04-22 11:58:39 [INFO]: New user created: 6807e6df3c2ab41701b55c2d
+2025-04-22 11:58:39 [INFO]: Response: POST /api/users/register - Status: 201 - Duration: 506ms
+2025-04-22 11:58:47 [INFO]: Request: GET /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:58:47 [INFO]: Retrieved 0 appointments for user 6807e6df3c2ab41701b55c2d
+2025-04-22 11:58:47 [INFO]: Response: GET /api/appointments - Status: 200 - Duration: 57ms
+2025-04-22 11:59:38 [INFO]: Request: POST /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:59:38 [ERROR]: Appointment creation failed: Date must be in the future
+2025-04-22 11:59:38 [ERROR]: 400 - Date must be in the future - /api/appointments - POST - ::ffff:127.0.0.1
+2025-04-22 11:59:38 [WARN]: Response: POST /api/appointments - Status: 400 - Duration: 9ms
+2025-04-22 11:59:51 [INFO]: Request: POST /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:59:51 [INFO]: New appointment created: 6807e7273c2ab41701b55c31
+2025-04-22 11:59:51 [INFO]: Response: POST /api/appointments - Status: 201 - Duration: 97ms
+2025-04-22 11:59:57 [INFO]: Request: GET /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 11:59:57 [INFO]: Retrieved 1 appointments for user 6807e6df3c2ab41701b55c2d
+2025-04-22 11:59:57 [INFO]: Response: GET /api/appointments - Status: 200 - Duration: 83ms
+2025-04-22 12:00:06 [INFO]: Request: POST /api/ratings - IP: ::ffff:127.0.0.1
+2025-04-22 12:00:07 [INFO]: Updated rating for doctor 6807e1713c2ab41701b55c06: 4.4
+2025-04-22 12:00:07 [INFO]: New rating created for doctor 6807e1713c2ab41701b55c06 by user 6807e6df3c2ab41701b55c2d
+2025-04-22 12:00:07 [INFO]: Response: POST /api/ratings - Status: 201 - Duration: 296ms
+2025-04-22 12:00:11 [INFO]: Request: GET /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 12:00:11 [INFO]: Request: GET /api/doctors - IP: ::ffff:127.0.0.1
+2025-04-22 12:00:11 [INFO]: Retrieved 1 appointments for user 6807e6df3c2ab41701b55c2d
+2025-04-22 12:00:11 [INFO]: Response: GET /api/appointments - Status: 304 - Duration: 86ms
+2025-04-22 12:00:11 [INFO]: Response: GET /api/doctors - Status: 200 - Duration: 86ms
+2025-04-22 12:00:28 [INFO]: Request: POST /api/users/login - IP: ::ffff:127.0.0.1
+2025-04-22 12:00:28 [INFO]: User authenticated: 6807e6df3c2ab41701b55c2d
+2025-04-22 12:00:28 [INFO]: Response: POST /api/users/login - Status: 200 - Duration: 150ms
+2025-04-22 12:00:28 [INFO]: Request: GET /api/appointments - IP: ::ffff:127.0.0.1
+2025-04-22 12:00:28 [INFO]: Retrieved 1 appointments for user 6807e6df3c2ab41701b55c2d
+2025-04-22 12:00:28 [INFO]: Response: GET /api/appointments - Status: 304 - Duration: 139ms
+2025-04-22 12:00:54 [INFO]: Request: POST /api/users/login - IP: ::ffff:127.0.0.1
+2025-04-22 12:00:54 [ERROR]: Authentication failed: Invalid email or password

@@ -1,0 +1,8 @@
+2025-04-22 11:30:00 [ERROR]: 401 - Authorization header missing or malformed - /api/users/profile - GET - ::ffff:127.0.0.1
+2025-04-22 11:39:06 [ERROR]: Appointment creation failed: This time slot is already booked
+2025-04-22 11:39:06 [ERROR]: 400 - This time slot is already booked - /api/appointments - POST - ::ffff:127.0.0.1
+2025-04-22 11:40:40 [ERROR]: Rating creation failed: Cannot rate: appointment not found or not completed
+2025-04-22 11:40:40 [ERROR]: 400 - Cannot rate: appointment not found or not completed - /api/ratings - POST - ::ffff:127.0.0.1
+2025-04-22 11:59:38 [ERROR]: Appointment creation failed: Date must be in the future
+2025-04-22 11:59:38 [ERROR]: 400 - Date must be in the future - /api/appointments - POST - ::ffff:127.0.0.1
+2025-04-22 12:00:54 [ERROR]: Authentication failed: Invalid email or password
