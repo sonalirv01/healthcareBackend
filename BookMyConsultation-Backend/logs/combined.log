@@ -105,3 +105,5 @@
 2025-04-22 12:00:28 [INFO]: Response: GET /api/appointments - Status: 304 - Duration: 139ms
 2025-04-22 12:00:54 [INFO]: Request: POST /api/users/login - IP: ::ffff:127.0.0.1
 2025-04-22 12:00:54 [ERROR]: Authentication failed: Invalid email or password
+2025-04-25 06:16:50 [ERROR]: Error verifying token: jwt expired
+2025-04-25 06:16:50 [ERROR]: 401 - Invalid or expired token - /api/users/profile - GET - ::1
