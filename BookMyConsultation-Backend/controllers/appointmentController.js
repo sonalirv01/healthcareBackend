@@ -1,14 +1,14 @@
-// Import appointmentService to interact with appointment data.
-// Example:
-// - bookAppointment(req, res): Validate input and call service to create a new appointment.
-// - getAppointments(req, res): Fetch user appointments from the database.
-// Handle validation, authorization, and error responses.
+// controllers/appointmentController.js
 
 const appointmentService = require('../services/appointmentService');
-const { ValidationError } = require('../middleware/errorHandler');
+const { AuthorizationError } = require('../middleware/errorHandler');
 const logger = require('../config/logger');
 
-// @desc Book a new appointment
+/**
+ * @desc    Book a new appointment
+ * @route   POST /api/appointments
+ * @access  Private
+ */
 const bookAppointment = async (req, res, next) => {
   try {
     const appointmentData = {
@@ -23,7 +23,11 @@ const bookAppointment = async (req, res, next) => {
   }
 };
 
-// @desc Get appointments for logged-in user
+/**
+ * @desc    Get all appointments for the logged-in user
+ * @route   GET /api/appointments
+ * @access  Private
+ */
 const getAppointments = async (req, res, next) => {
   try {
     const userId = req.user.id;
@@ -34,38 +38,46 @@ const getAppointments = async (req, res, next) => {
   }
 };
 
-// @desc Cancel an appointment
+/**
+ * @desc    Cancel a booked appointment
+ * @route   DELETE /api/appointments/:id
+ * @access  Private
+ */
 const cancelAppointment = async (req, res, next) => {
   try {
     const appointmentId = req.params.id;
     const userId = req.user.id;
-    
+
     const appointment = await appointmentService.cancelAppointment(appointmentId, userId);
-    res.status(200).json({ 
+
+    res.status(200).json({
       message: 'Appointment cancelled successfully',
-      appointment
+      appointment,
     });
   } catch (error) {
     next(error);
   }
 };
 
-// @desc Complete an appointment
+/**
+ * @desc    Mark an appointment as completed (admin only)
+ * @route   PUT /api/appointments/:id/complete
+ * @access  Admin
+ */
 const completeAppointment = async (req, res, next) => {
   try {
     const appointmentId = req.params.id;
-    
+
     const appointment = await appointmentService.getAppointmentById(appointmentId);
-    
+
     if (!appointment) {
       return res.status(404).json({ message: 'Appointment not found' });
     }
-    
-    // Check if the user is authorized to complete the appointment
+
     if (req.user.role !== 'admin') {
       throw new AuthorizationError('Not authorized to complete this appointment');
     }
-    
+
     const updated = await appointmentService.updateAppointmentStatus(appointmentId, 'completed');
     res.status(200).json(updated);
   } catch (error) {
@@ -73,7 +85,6 @@ const completeAppointment = async (req, res, next) => {
   }
 };
 
-// Export the appointment controller functions
 module.exports = {
   bookAppointment,
   getAppointments,

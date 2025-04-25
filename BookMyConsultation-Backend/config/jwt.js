@@ -1,32 +1,37 @@
-// Import jwt library for handling tokens.
-// Create a function to generate JWT tokens using a secret key and payload.
-// Define token expiration times as required (e.g., 1 hour).
-// Add a function to verify tokens, ensuring they are valid and not expired.
-// Handle invalid tokens gracefully by throwing appropriate errors.
-// Export the helper functions for use in controllers and middleware.
+// utils/jwtHelper.js
 
+// Import jwt library for handling tokens
 const jwt = require('jsonwebtoken');
+
+// Retrieve the JWT secret from environment variables
 const JWT_SECRET = process.env.JWT_SECRET;
-const JWT_EXPIRES_IN = '1h';
+
+// Set the token expiration time to 30 minutes
+const JWT_EXPIRES_IN = '30m'; // Token expires in 30 minutes
 
 // Generate a JWT token for a given payload
 const generateToken = (payload) => {
   try {
+    // Sign and return the JWT token
     return jwt.sign(payload, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
   } catch (error) {
+    // Throw an error if token generation fails
     throw new Error('Failed to generate token');
   }
 };
 
-// Decode a token without verifying its signature
+// Verify the validity of a token
 const verifyToken = (token) => {
   try {
+    // Verify and decode the token, checking its validity and expiration
     return jwt.verify(token, JWT_SECRET);
   } catch (error) {
+    // Handle invalid or expired token errors
     throw new Error('Invalid or expired token');
   }
 };
 
+// Export the helper functions for use in controllers and middleware
 module.exports = {
   generateToken,
   verifyToken

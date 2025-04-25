@@ -1,13 +1,12 @@
-// Implement doctor-related route handlers here.
-// Example handlers:
-// - getDoctors: Fetch all doctors or by specialization.
-// - addDoctor: Add a new doctor record.
-// - updateDoctor: Update doctor details.
-// Use the doctorService for interactions with the database.
+// controllers/doctorController.js
 
 const doctorService = require('../services/doctorService');
 
-// @desc Get all doctors or by specialization (public)
+/**
+ * @desc    Get all doctors or filter by specialization
+ * @route   GET /api/doctors?specialization=xyz
+ * @access  Public
+ */
 const getDoctors = async (req, res, next) => {
   try {
     const { specialization } = req.query;
@@ -18,22 +17,30 @@ const getDoctors = async (req, res, next) => {
   }
 };
 
-// @desc Get doctor by ID (public)
+/**
+ * @desc    Get a doctor by ID
+ * @route   GET /api/doctors/:id
+ * @access  Public
+ */
 const getDoctorById = async (req, res, next) => {
   try {
     const doctor = await doctorService.getDoctorById(req.params.id);
-    
+
     if (!doctor) {
       return res.status(404).json({ message: 'Doctor not found' });
     }
-    
+
     res.status(200).json(doctor);
   } catch (error) {
     next(error);
   }
 };
 
-// @desc Add a new doctor (admin only - middleware enforces this)
+/**
+ * @desc    Add a new doctor
+ * @route   POST /api/doctors
+ * @access  Admin (enforced by middleware)
+ */
 const addDoctor = async (req, res, next) => {
   try {
     const doctor = await doctorService.createDoctor(req.body);
@@ -43,7 +50,11 @@ const addDoctor = async (req, res, next) => {
   }
 };
 
-// @desc Update doctor details (admin only - middleware enforces this)
+/**
+ * @desc    Update doctor details
+ * @route   PUT /api/doctors/:id
+ * @access  Admin (enforced by middleware)
+ */
 const updateDoctor = async (req, res, next) => {
   try {
     const updatedDoctor = await doctorService.updateDoctor(req.params.id, req.body);
@@ -53,7 +64,11 @@ const updateDoctor = async (req, res, next) => {
   }
 };
 
-// @desc Delete doctor (admin only - middleware enforces this)
+/**
+ * @desc    Delete a doctor
+ * @route   DELETE /api/doctors/:id
+ * @access  Admin (enforced by middleware)
+ */
 const deleteDoctor = async (req, res, next) => {
   try {
     await doctorService.deleteDoctor(req.params.id);
@@ -68,5 +83,5 @@ module.exports = {
   getDoctorById,
   addDoctor,
   updateDoctor,
-  deleteDoctor
+  deleteDoctor,
 };
